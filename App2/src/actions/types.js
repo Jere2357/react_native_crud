@@ -1,0 +1,10 @@
+export const DESTINATION_CREATE_SUCCESS = 'destination_create_success';
+export const DESTINATION_CREATE_FAILED = 'destination_create_failed';
+export const DESTINATION_READ_SUCCESS = 'destination_read_success';
+export const DESTINATION_READ_FAILED = 'destination_read_failed';
+export const DESTINATION_UPDATE_SUCCESS = 'destination_update_success';
+export const DESTINATION_UPDATE_FAILED = 'destination_update_failed';
+export const DESTINATION_DELETE_SUCCESS = 'destination_delete_success';
+export const DESTINATION_DELETE_FAILED = 'destination_delete_failed';
+export const DESTINATION_SINGLE_VIEW_SUCCESS = 'destination_single_view_success';
+export const DESTINATION_SINGLE_VIEW_FAILED = 'destination_single_view_failed';
