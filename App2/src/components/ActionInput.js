@@ -20,67 +20,67 @@ const ActionInput = ({
   return (
     <Container>
       <Content>
-        <Item floatingLabel error={valid}>
-          <Label>name</Label>
+        <Item inlineLabel error={valid}>
+          <Label>name:</Label>
           <Input
             value={name}
             onChangeText={e => handleInputChange('name', e)}
           />
         </Item>
-        <Item floatingLabel error={valid}>
-          <Label>temperature</Label>
+        <Item inlineLabel error={valid}>
+          <Label>temperature:</Label>
           <Input
             value={temperature}
             onChangeText={e => handleInputChange('temperature', e)}
           />
         </Item>
-        <Item floatingLabel error={valid}>
-          <Label>location</Label>
+        <Item inlineLabel error={valid}>
+          <Label>location:</Label>
           <Input
             value={location}
             onChangeText={e => handleInputChange('location', e)}
           />
         </Item>
-        <Item floatingLabel error={valid}>
-          <Label>height</Label>
+        <Item inlineLabel error={valid}>
+          <Label>height:</Label>
           <Input
             keyboardType="numeric"
             value={height}
             onChangeText={e => handleInputChange('height', e)}
           />
         </Item>
-        <Item floatingLabel error={valid}>
-          <Label>difficulty</Label>
+        <Item inlineLabel error={valid}>
+          <Label>difficulty:</Label>
           <Input
             keyboardType="numeric"
             value={difficulty}
             onChangeText={e => handleInputChange('difficulty', e)}
           />
         </Item>
-        <Item floatingLabel error={valid}>
-          <Label>about</Label>
+        <Item inlineLabel error={valid}>
+          <Label>about:</Label>
           <Input
             value={about}
             onChangeText={e => handleInputChange('about', e)}
           />
         </Item>
-        <Item floatingLabel error={valid}>
-          <Label>duration</Label>
+        <Item inlineLabel error={valid}>
+          <Label>duration:</Label>
           <Input
             value={duration}
             onChangeText={e => handleInputChange('duration', e)}
           />
         </Item>
-        <Item floatingLabel error={valid}>
-          <Label>water</Label>
+        <Item inlineLabel error={valid}>
+          <Label>water:</Label>
           <Input
             keyboardType="numeric"
             value={water}
             onChangeText={e => handleInputChange('water', e)}
           />
         </Item>
-        <Item floatingLabel error={valid}>
-          <Label>image</Label>
+        <Item inlineLabel error={valid}>
+          <Label>image:</Label>
           <Input
             value={image}
             onChangeText={e => handleInputChange('image', e)}
