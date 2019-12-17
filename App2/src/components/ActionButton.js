@@ -15,6 +15,7 @@ const ActionButton = ({handler, type}) => {
 const styles = StyleSheet.create({
   actionButton: {
     alignItems: 'center',
+    marginTop: 30,
   },
 });
 

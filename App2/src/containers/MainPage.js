@@ -83,7 +83,7 @@ class MainPage extends Component {
     );
   };
 
-  handleChangeDropDown = (value, type) => {
+  handleChangeDropDown = value => {
     this.setState(
       {
         selectedDestination: value,
@@ -172,6 +172,7 @@ class MainPage extends Component {
           duration: null,
           water: null,
           image: null,
+          onPress: false,
         });
       });
       alert('Created successfully');
@@ -237,6 +238,7 @@ class MainPage extends Component {
           duration: null,
           water: null,
           image: null,
+          onPress: false,
         });
       });
       alert('Updated successfully');
