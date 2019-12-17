@@ -177,12 +177,9 @@ class MainPage extends Component {
       });
       alert('Created successfully');
     } else {
-      this.setState(
-        {
-          valid: true,
-        },
-        () => alert('wrong entry destination'),
-      );
+      this.setState({
+        valid: true,
+      });
     }
   };
 
@@ -243,12 +240,9 @@ class MainPage extends Component {
       });
       alert('Updated successfully');
     } else {
-      this.setState(
-        {
-          valid: true,
-        },
-        () => alert('wrong entry destination'),
-      );
+      this.setState({
+        valid: true,
+      });
     }
   };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Container, Content, Item, Input, Label} from 'native-base';
+import {Text, StyleSheet} from 'react-native';
 import ActionButton from './ActionButton';
 
 const ActionInput = ({
@@ -28,6 +29,9 @@ const ActionInput = ({
             onChangeText={e => handleInputChange('name', e)}
           />
         </Item>
+        {onPress && !name ? (
+          <Text style={styles.helperText}>name is required</Text>
+        ) : null}
         <Item inlineLabel error={onPress && !temperature ? true : false}>
           <Label>temperature:</Label>
           <Input
@@ -35,6 +39,9 @@ const ActionInput = ({
             onChangeText={e => handleInputChange('temperature', e)}
           />
         </Item>
+        {onPress && !temperature ? (
+          <Text style={styles.helperText}>temperature is required</Text>
+        ) : null}
         <Item inlineLabel error={onPress && !location ? true : false}>
           <Label>location:</Label>
           <Input
@@ -42,6 +49,9 @@ const ActionInput = ({
             onChangeText={e => handleInputChange('location', e)}
           />
         </Item>
+        {onPress && !location ? (
+          <Text style={styles.helperText}>location is required</Text>
+        ) : null}
         <Item inlineLabel error={onPress && !height ? true : false}>
           <Label>height:</Label>
           <Input
@@ -50,6 +60,9 @@ const ActionInput = ({
             onChangeText={e => handleInputChange('height', e)}
           />
         </Item>
+        {onPress && !height ? (
+          <Text style={styles.helperText}>height is required</Text>
+        ) : null}
         <Item inlineLabel error={onPress && !difficulty ? true : false}>
           <Label>difficulty:</Label>
           <Input
@@ -58,6 +71,9 @@ const ActionInput = ({
             onChangeText={e => handleInputChange('difficulty', e)}
           />
         </Item>
+        {onPress && !difficulty ? (
+          <Text style={styles.helperText}>difficulty is required</Text>
+        ) : null}
         <Item inlineLabel error={onPress && !about ? true : false}>
           <Label>about:</Label>
           <Input
@@ -65,6 +81,9 @@ const ActionInput = ({
             onChangeText={e => handleInputChange('about', e)}
           />
         </Item>
+        {onPress && !about ? (
+          <Text style={styles.helperText}>about is required</Text>
+        ) : null}
         <Item inlineLabel error={onPress && !duration ? true : false}>
           <Label>duration:</Label>
           <Input
@@ -72,6 +91,9 @@ const ActionInput = ({
             onChangeText={e => handleInputChange('duration', e)}
           />
         </Item>
+        {onPress && !duration ? (
+          <Text style={styles.helperText}>duration is required</Text>
+        ) : null}
         <Item inlineLabel error={onPress && !water ? true : false}>
           <Label>water:</Label>
           <Input
@@ -80,6 +102,9 @@ const ActionInput = ({
             onChangeText={e => handleInputChange('water', e)}
           />
         </Item>
+        {onPress && !water ? (
+          <Text style={styles.helperText}>water is required</Text>
+        ) : null}
         <Item inlineLabel error={onPress && !image ? true : false}>
           <Label>image:</Label>
           <Input
@@ -87,10 +112,20 @@ const ActionInput = ({
             onChangeText={e => handleInputChange('image', e)}
           />
         </Item>
+        {onPress && !image ? (
+          <Text style={styles.helperText}>image is required</Text>
+        ) : null}
         <ActionButton handler={handler} type={type} />
       </Content>
     </Container>
   );
 };
+
+const styles = StyleSheet.create({
+  helperText: {
+    color: 'red',
+    textAlign: 'center',
+  },
+});
 
 export default ActionInput;
