@@ -24,6 +24,7 @@ const NavigationBar = ({
   handleDelete,
   handleUpdate,
   valid,
+  onPress,
   selectedDestination,
 }) => {
   return (
@@ -47,6 +48,7 @@ const NavigationBar = ({
             image={image}
             handler={handleCreate}
             valid={valid}
+            onPress={onPress}
             handleInputChange={handleInputChange}
             type={'Create'}
           />
@@ -74,6 +76,7 @@ const NavigationBar = ({
             image={image}
             handler={handleUpdate}
             valid={valid}
+            onPress={onPress}
             handleInputChange={handleInputChange}
             type={'Update'}
           />

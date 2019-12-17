@@ -24,6 +24,7 @@ class MainPage extends Component {
       water: null,
       image: null,
       valid: false,
+      onPress: false,
       destinations: [],
       destinations_names: [],
       selectedDestination: '',
@@ -64,6 +65,7 @@ class MainPage extends Component {
         water: '',
         image: '',
         selectedDestination: '',
+        onPress: false,
       },
       () => {
         this.props.readDestinations().then(() => {
@@ -144,6 +146,10 @@ class MainPage extends Component {
       image: image,
     };
 
+    this.setState({
+      onPress: true,
+    });
+
     if (
       payload.name &&
       payload.temperature &&
@@ -204,6 +210,10 @@ class MainPage extends Component {
       image: image,
     };
 
+    this.setState({
+      onPress: true,
+    });
+
     if (
       !this.props.error &&
       (payload.name &&
@@ -241,7 +251,7 @@ class MainPage extends Component {
   };
 
   handleInputChange = (name, event) => {
-    this.setState({[name]: event, valid: false});
+    this.setState({[name]: event, valid: false, onPress: false});
   };
 
   handleDelete = () => {
@@ -278,6 +288,7 @@ class MainPage extends Component {
         handleDelete={e => this.handleDelete(e)}
         handleUpdate={e => this.handleUpdate(e)}
         valid={this.state.valid}
+        onPress={this.state.onPress}
         selectedDestination={this.state.selectedDestination}
       />
     );
