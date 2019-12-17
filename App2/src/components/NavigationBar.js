@@ -23,6 +23,7 @@ const NavigationBar = ({
   handleChangeTab,
   handleDelete,
   handleUpdate,
+  valid,
   selectedDestination,
 }) => {
   return (
@@ -45,6 +46,7 @@ const NavigationBar = ({
             water={water}
             image={image}
             handler={handleCreate}
+            valid={valid}
             handleInputChange={handleInputChange}
             type={'Create'}
           />
@@ -71,6 +73,7 @@ const NavigationBar = ({
             water={water}
             image={image}
             handler={handleUpdate}
+            valid={valid}
             handleInputChange={handleInputChange}
             type={'Update'}
           />

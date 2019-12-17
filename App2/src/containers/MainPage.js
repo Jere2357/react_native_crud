@@ -23,6 +23,7 @@ class MainPage extends Component {
       duration: null,
       water: null,
       image: null,
+      valid: false,
       destinations: [],
       destinations_names: [],
       selectedDestination: '',
@@ -132,28 +133,27 @@ class MainPage extends Component {
       image,
     } = this.state;
     const payload = {
-      name: this.state.name,
-      temperature: this.state.temperature,
-      location: this.state.location,
-      height: this.state.height,
-      difficulty: this.state.difficulty,
-      about: this.state.about,
-      duration: this.state.duration,
-      water: this.state.water,
-      image: this.state.image,
+      name: name,
+      temperature: temperature,
+      location: location,
+      height: height,
+      difficulty: difficulty,
+      about: about,
+      duration: duration,
+      water: water,
+      image: image,
     };
 
     if (
-      !this.props.error &&
-      (name ||
-        temperature ||
-        location ||
-        height ||
-        difficulty ||
-        about ||
-        duration ||
-        water ||
-        image)
+      payload.name &&
+      payload.temperature &&
+      payload.location &&
+      payload.height &&
+      payload.difficulty &&
+      payload.about &&
+      payload.duration &&
+      payload.water &&
+      payload.image
     ) {
       this.props.createDestinations(payload).then(() => {
         this.setState({
@@ -170,7 +170,12 @@ class MainPage extends Component {
       });
       alert('Created successfully');
     } else {
-      alert('wrong entry destination');
+      this.setState(
+        {
+          valid: true,
+        },
+        () => alert('wrong entry destination'),
+      );
     }
   };
 
@@ -188,28 +193,28 @@ class MainPage extends Component {
       selectedDestination,
     } = this.state;
     const payload = {
-      name: this.state.name,
-      temperature: this.state.temperature,
-      location: this.state.location,
-      height: this.state.height,
-      difficulty: this.state.difficulty,
-      about: this.state.about,
-      duration: this.state.duration,
-      water: this.state.water,
-      image: this.state.image,
+      name: name,
+      temperature: temperature,
+      location: location,
+      height: height,
+      difficulty: difficulty,
+      about: about,
+      duration: duration,
+      water: water,
+      image: image,
     };
 
     if (
       !this.props.error &&
-      (name ||
-        temperature ||
-        location ||
-        height ||
-        difficulty ||
-        about ||
-        duration ||
-        water ||
-        image)
+      (payload.name &&
+        payload.temperature &&
+        payload.location &&
+        payload.height &&
+        payload.difficulty &&
+        payload.about &&
+        payload.duration &&
+        payload.water &&
+        payload.image)
     ) {
       this.props.updateDestinations(selectedDestination, payload).then(() => {
         this.setState({
@@ -226,12 +231,17 @@ class MainPage extends Component {
       });
       alert('Updated successfully');
     } else {
-      alert('wrong entry destination');
+      this.setState(
+        {
+          valid: true,
+        },
+        () => alert('wrong entry destination'),
+      );
     }
   };
 
   handleInputChange = (name, event) => {
-    this.setState({[name]: event});
+    this.setState({[name]: event, valid: false});
   };
 
   handleDelete = () => {
@@ -267,6 +277,7 @@ class MainPage extends Component {
         handleChangeTab={e => this.handleChangeTab(e)}
         handleDelete={e => this.handleDelete(e)}
         handleUpdate={e => this.handleUpdate(e)}
+        valid={this.state.valid}
         selectedDestination={this.state.selectedDestination}
       />
     );
