@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Content, Item, Input, Label} from 'native-base';
+import {Container, Content, Item, Input, Label, Icon} from 'native-base';
 import {Text, StyleSheet} from 'react-native';
 import ActionButton from './ActionButton';
 
@@ -123,6 +123,7 @@ const ActionInput = ({
 
 const styles = StyleSheet.create({
   helperText: {
+    fontSize: 12,
     color: 'red',
     textAlign: 'center',
   },
