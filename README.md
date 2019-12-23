@@ -1,6 +1,6 @@
 # Description
 Sample crud hiking app integrated using react native cli
-**Android**
+**Android and iOS**
  - created navbar component
  - created reusable component for button and input fields
  - created card component which displays all the destinations data
